@@ -144,7 +144,9 @@ while len(global_set) > 0:
         if item in global_set: 
             global_set.remove(item)
 
-print(dep_list)
+# print(dep_list)
+for dep in dep_list:
+    print(dep)
 
 level1_values = np.copy(num_arr)
 for dep in dep_list:
@@ -153,6 +155,7 @@ for dep in dep_list:
     level1_values[list(dep)] = pour_value
 
 print(len(level1_values.tolist()))
+
 
 # print(fill_depression(values, find_depression(values, min_index))
 
@@ -346,6 +349,3 @@ for index,  line in enumerate(lines):
 
 # print(out_lines)
 
-with open(out_csv, 'w') as f:
-    f.write(header)
-    f.writelines(out_lines)
